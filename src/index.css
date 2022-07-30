@@ -1,13 +1,21 @@
-body {
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.blue{
+  color:blue;
+}
+.hero{
+  width:100vw;
+  height:95vh;
+  background-image:url("../src/images/heroImg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.footer{
+  height:15vh;
+  background:teal;
+  margin:25px 0 0 0 ;
+  padding:0;
 }
