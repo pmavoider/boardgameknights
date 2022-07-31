@@ -6,24 +6,27 @@ const Header = () => {
     const togglenavbar = () => setCollapsed(!collapsed)
     return (
         <>
-    <Navbar className="navbar-expand-sm"  >
+    <Navbar className="navbar-expand-sm">
   
     <NavbarBrand  href="#"><h1>Board Game Knights</h1></NavbarBrand>
-    <NavbarToggler onClick={togglenavbar}  className="me-2" />
+    <NavbarToggler onClick={togglenavbar}  className="me-2 " />
     <Collapse isOpen={!collapsed} navbar >
     <Nav navbar>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav  mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Prouducts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item dropdown">
             <a></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link disabled">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Cart</a>
         </li>
       </ul>
       </Nav>

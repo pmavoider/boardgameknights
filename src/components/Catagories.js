@@ -24,7 +24,7 @@ const Catagories = () => {
                     <CardImg  className="m-auto" src={hero} alt="boardGame" />
                    
                     <CardBody>
-                    <CardTitle className="text-center"><h3>Classic Games</h3></CardTitle>
+                    <CardTitle className="text-center"><h3>Dice Games</h3></CardTitle>
                     </CardBody>
                 </Card>
             </Col>
@@ -33,7 +33,7 @@ const Catagories = () => {
                     <CardImg  className="m-auto" src={hero} alt="boardGame" />
                    
                     <CardBody>
-                    <CardTitle className="text-center"><h3>Classic Games</h3></CardTitle>
+                    <CardTitle className="text-center"><h3>Strategy Games</h3></CardTitle>
                     </CardBody>
                 </Card>
             </Col>
@@ -42,7 +42,25 @@ const Catagories = () => {
                     <CardImg   src={hero} alt="boardGame" />
                    
                     <CardBody>
-                    <CardTitle className="text-center"><h3>Classic Games</h3></CardTitle>
+                    <CardTitle className="text-center"><h3>Party Games</h3></CardTitle>
+                    </CardBody>
+                </Card>
+            </Col>
+            <Col  className="mt-3 col-12 col-sm-6 col-md-4">
+                <Card className="m-auto" style={{ width: "80%" }}>
+                    <CardImg   src={hero} alt="boardGame" />
+                   
+                    <CardBody>
+                    <CardTitle className="text-center"><h3>Officially Licensed Games</h3></CardTitle>
+                    </CardBody>
+                </Card>
+            </Col>
+            <Col  className="mt-3 col-12 col-sm-6 col-md-4">
+                <Card className="m-auto" style={{ width: "80%" }}>
+                    <CardImg   src={hero} alt="boardGame" />
+                   
+                    <CardBody>
+                    <CardTitle className="text-center"><h3>Staff Picks</h3></CardTitle>
                     </CardBody>
                 </Card>
             </Col>
