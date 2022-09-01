@@ -1,11 +1,11 @@
-import {Col, Row, Card, CardTittle, CardBody, Button} from "reactstrap"
+import { Card, Button} from "reactstrap"
 import {Link} from "react-router-dom"
-import {handleShow} from "../pages/Products"
 
 
 
-const ProductPageBuilder = (props) => {
-    const [key, name, handleShow] = props 
+
+const ProductPageBuilder = ({name}) => {
+  
     return(<>
     <Card   className="col-6 col-md-10 p-4 mx-auto bord">
     <Link style={{ textDecoration: "none"}} to={`productsPage/${name.name}`}>
@@ -14,7 +14,7 @@ const ProductPageBuilder = (props) => {
         <h4  className="text-center mt-3 a">{name.price}</h4>
         </Link>
         <div className="mt-4 d-flex flex-row  justify-content-around">
-        <Button className="rounded btn-sm " onClick={handleShow}>add to cart </Button>
+        <Button className="rounded btn-sm " >add to cart </Button>
         
         </div>
         </Card>

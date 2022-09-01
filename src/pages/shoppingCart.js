@@ -1,8 +1,0 @@
-
-
-const shoppingCart = (props) => {
-
-    return(
-        
-    )
-}
