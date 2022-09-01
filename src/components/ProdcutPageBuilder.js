@@ -1,13 +1,25 @@
-import {Col, Row, Card, CardTittle, CardBody} from "reactstrap"
+import {Col, Row, Card, CardTittle, CardBody, Button} from "reactstrap"
+import {Link} from "react-router-dom"
+import {handleShow} from "../pages/Products"
 
 
-const ProductPageBuilder = ({name}) => {
-        console.log(name.images.small)
-    
+
+const ProductPageBuilder = (props) => {
+    const [key, name, handleShow] = props 
     return(<>
-        <img src={name.images.medium} className="d-block mx-auto" />
-        <h1 className="text-center">{name.name}</h1>
+    <Card   className="col-6 col-md-10 p-4 mx-auto bord">
+    <Link style={{ textDecoration: "none"}} to={`productsPage/${name.name}`}>
+        <img style={{ aspectRatio:"4/3"}} src={name.image} className=" card-img-top mt-4 d-block mx-auto" />
+        <h3 className="text-center mt-3 a">{name.name}</h3>
+        <h4  className="text-center mt-3 a">{name.price}</h4>
+        </Link>
+        <div className="mt-4 d-flex flex-row  justify-content-around">
+        <Button className="rounded btn-sm " onClick={handleShow}>add to cart </Button>
+        
+        </div>
+        </Card>
         </>
+       
     )
 }
 export default ProductPageBuilder
