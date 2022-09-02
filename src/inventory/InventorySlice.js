@@ -42,6 +42,6 @@ export const inventorySlice = createSlice({
     }
     }
 )
-export const {setInventory } = inventorySlice.actions
+
 
 export const inventorySliceReducer = inventorySlice.reducer

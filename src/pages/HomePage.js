@@ -1,18 +1,18 @@
-import { useEffect } from "react"
-import Catagories from "../components/Catagories"
 import { useDispatch} from "react-redux"
 import { fetchInventory } from "../inventory/InventorySlice"
+import { useEffect } from "react"
+import Catagories from "../components/Catagories"
+
 
 
 
 
 const HomePage = () => {
-   const dispatch = useDispatch();
-  
-   
+    const dispatch = useDispatch();
+      
     useEffect(() => {
-        dispatch(fetchInventory())
-    }, [dispatch]);
+            dispatch(fetchInventory())
+        }, [dispatch]);
 
 
     return (<>
