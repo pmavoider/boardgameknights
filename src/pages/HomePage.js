@@ -22,8 +22,9 @@ const HomePage = () => {
 
     return (<>
         <div className="hero">
-            <h3 className="text-white text-center pt-5">Welcome to the World's #1 Online GameStore
-            </h3>
+            <h2 className="text-light text-center pt-5">Welcome to the World's <br></br>
+            #1 Online GameStore
+            </h2>
             </div>
             <Catagories />
             </>

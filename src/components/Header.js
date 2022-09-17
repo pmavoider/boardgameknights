@@ -15,12 +15,12 @@ const Header = () => {
     <Collapse isOpen={!collapsed} navbar >
     <Nav navbar>
       <ul className="navbar-nav justify-content-end  ml-5 mb-lg-0">
-        <Link className="a p-3" to="products/lk"><li className="nav-item">
+        <Link className="a p-3" to="products"><li className="nav-item">
           products
         </li></Link>
         <Link className="a p-3" to="products"><li className="nav-item">
-          products
-        </li></Link>Name
+          Favorites
+        </li></Link>
        
         <Link className="a p-3" to="products"><li className="nav-item">
           products

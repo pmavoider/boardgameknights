@@ -10,8 +10,8 @@ import {useSelector} from "react-redux"
  const Products = (props) => { 
  let name = useParams()
   const print = useSelector(state => state)
-  let color =  print.inventory.inventoryArray
-  
+  let color = ""
+  console.log(print)
   switch(name.category){
     case "classic":
       color = print.inventory.inventoryArray
@@ -25,10 +25,11 @@ import {useSelector} from "react-redux"
     case "partyGames":
      color = print.partyGames.partyGamesArray
       break;
-      case "officialGames":
-        color = print.officialGames.partyGamesArray
+      case "official":
+        color = print.officialGames.officialGamesArray
          break;
   }
+
   fetch("https://api.boardgameatlas.com/api/lists?username=Pmavoider&client_id=4HT2KbcdyO")
   .then ( res => res.json())
   .then (data => console.log(data.lists))  

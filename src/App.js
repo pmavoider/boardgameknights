@@ -17,9 +17,11 @@ function App() {
     <Route path="/" element={<HomePage  />} />
     <Route path="products" element={<Products /> } />
     <Route path="products/:category" element={<Products />}  />
-    <Route path="products/classic/productspage/:name" element={<ProductBreakout />} />
-    <Route path="products/diceGames/productspage/:name" element={<ProductBreakout />} />
-    <Route path="products/strategy/productsPage/:name" element={<ProductBreakout />} />
+    <Route path="products/classic/productspage/:name" element={<ProductBreakout cat="classic"/>} />
+    <Route path="products/diceGames/productsPage/:name" element={<ProductBreakout cat ="diceGames"/>} />
+    <Route path="products/strategy/productsPage/:name" element={<ProductBreakout cat="strategy" />}  />
+    <Route path="products/partyGames/productsPage/:name" element={<ProductBreakout cat="partyGames" />}  />
+    <Route path="products/official/productsPage/:name" element={<ProductBreakout cat="officialGames" />}  />
     <Route path="shoppingCart" element={<ShoppingCart />} />
     </Routes>
 

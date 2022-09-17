@@ -6,12 +6,29 @@ import { Button } from "bootstrap"
 import { useDispatch } from "react-redux"
 
 
-const ProductBreakout = () => {
+const ProductBreakout = (props) => {
     const dispatch = useDispatch()
     let product = useParams()
-    const color = useSelector(state => state.inventory.inventoryArray)
-    
-    
+    const category = useSelector(state => state)
+    let color = ""
+    switch(props.cat){
+        case "classic":
+          color = category.inventory.inventoryArray
+          break;
+        case "strategy":
+               color = category.strategy.strategyArray
+                break;
+        case "diceGames":
+            color = category.diceGames.diceGameArray
+             break;
+        case "partyGames":
+         color = category.partyGames.partyGamesArray
+          break;
+          case "officialGames":
+            color = category.officialGames.officialGamesArray
+             break;
+      }
+
     for (let i = 0; i < color.length; i++) {
         if (color[i].name === product.name){
             let product = color[i]
