@@ -2,9 +2,10 @@ import { useDispatch} from "react-redux"
 import { fetchInventory } from "../inventory/InventorySlice"
 import { useEffect } from "react"
 import Catagories from "../components/Catagories"
-
-
-
+import { fetchStrategyInventory } from "../inventory/StategyInventory"
+import { fetchDiceGameInventory } from "../inventory/DiceGameInventory"
+import { fetchPartyGameInventory } from "../inventory/PartyGameInventory"
+import { fetchOfficialInventory} from "../inventory/OfficialInventory";
 
 
 const HomePage = () => {
@@ -12,6 +13,10 @@ const HomePage = () => {
       
     useEffect(() => {
             dispatch(fetchInventory())
+            dispatch(fetchStrategyInventory())
+            dispatch(fetchPartyGameInventory())
+            dispatch(fetchDiceGameInventory())
+            dispatch(fetchOfficialInventory())
         }, [dispatch]);
 
 

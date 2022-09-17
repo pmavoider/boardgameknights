@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
     value: []
   };
@@ -9,8 +10,8 @@ export const shoppingCartSlice = createSlice({
     initialState,
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
-      add: (x, state , payload) => {
-            alert(x)
+      add: (state, action) => {
+            state.value.push({...action.payload, qty:1})
       }
     },
     // The `extraReducers` field lets the slice handle actions defined elsewhere,

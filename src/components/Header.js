@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <>
     <Navbar className="navbar-expand-md p-3 bg-info">
-    <NavbarBrand  href="#"><h1 >Board Game Knights</h1></NavbarBrand>
+    <NavbarBrand  href="#"><h1 ><a href="/" >Board Game Knights</a></h1></NavbarBrand>
     <NavbarToggler onClick={togglenavbar}  className="me-2 " />
     <Collapse isOpen={!collapsed} navbar >
     <Nav navbar>
@@ -33,7 +33,9 @@ const Header = () => {
 </Navbar>
 <Row className= "bg-info">
   <Col class="col ">
+  <Link style={{ textDecoration: "none"}} to={`shoppingCart`}>
   <p className="col-11 text-end" >Cart: {cart.value.length}</p>
+  </Link>
   </Col>
 </Row>
 

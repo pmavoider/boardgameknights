@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 let tempArray = []
-export const fetchInventory = createAsyncThunk(
-    'inventory/fetchInventory',
+export const fetchPartyGameInventory = createAsyncThunk(
+    'partyGames/fetchPartyGames',
     async () => {
-      
-        const response = await fetch("https://api.boardgameatlas.com/api/search?list_id=lRL8hqWoID&client_id=4HT2KbcdyO");
+        
+        const response = await fetch("https://api.boardgameatlas.com/api/search?list_id=mQcOJL1oUA&client_id=4HT2KbcdyO");
         const data = await response.json()
         data.games.map((x) => {
               tempArray.push({
@@ -20,22 +20,22 @@ export const fetchInventory = createAsyncThunk(
     }
     );
 
-export const inventorySlice = createSlice({
-    name: "inventory",
-    initialState:{ isLoading: true, errMess: null, inventoryArray: [] },
+export const partyGamesInventorySlice = createSlice({
+    name: "partyGames",
+    initialState:{ isLoading: true, errMess: null, partyGamesArray: [] },
     reducers: { },
     extraReducers:{
-        [fetchInventory.pending]: (state) => {
+        [fetchPartyGameInventory.pending]: (state) => {
             state.isLoading = true
         },
-        [fetchInventory.fulfilled]: (state, action) => {
+        [fetchPartyGameInventory.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.errMess = null;
-            state.inventoryArray = action.payload;
+            state.partyGamesArray = action.payload;
            
 
         },
-        [fetchInventory.rejected]: (state, action) =>{
+        [fetchPartyGameInventory.rejected]: (state, action) =>{
             state.isLoading = false;
             state.errMess = action.error ? action.error.message : "fetch failed"
         }
@@ -44,4 +44,4 @@ export const inventorySlice = createSlice({
 )
 
 
-export const inventorySliceReducer = inventorySlice.reducer
+export const partyGameInventorySliceReducer = partyGamesInventorySlice.reducer

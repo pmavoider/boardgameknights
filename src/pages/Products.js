@@ -1,21 +1,43 @@
 import ProductPageBuilder from "../components/ProdcutPageBuilder"
 import {Col, Row } from 'reactstrap';
-
+import { useParams } from "react-router-dom";
 import {useSelector} from "react-redux"
 
 
 
 
 
- const Products = () => { 
-  
+ const Products = (props) => { 
+ let name = useParams()
   const print = useSelector(state => state)
-  const color = print.inventory.inventoryArray
+  let color =  print.inventory.inventoryArray
+  
+  switch(name.category){
+    case "classic":
+      color = print.inventory.inventoryArray
+      break;
+    case "strategy":
+           color = print.strategy.strategyArray
+            break;
+    case "diceGames":
+        color = print.diceGames.diceGameArray
+         break;
+    case "partyGames":
+     color = print.partyGames.partyGamesArray
+      break;
+      case "officialGames":
+        color = print.officialGames.partyGamesArray
+         break;
+  }
+  fetch("https://api.boardgameatlas.com/api/lists?username=Pmavoider&client_id=4HT2KbcdyO")
+  .then ( res => res.json())
+  .then (data => console.log(data.lists))  
+
     
     //const [inventoryObj , setInventoryObj] = useState([]);
     //const categoryArray = ["lRL8hqWo", "strategy", "CardGames", "diceGames", "partyGames"];
    
- console.log(print)
+
 
 
   
@@ -27,7 +49,7 @@ return(<>
         <Row className="mt-5 col-10 mx-auto">
             {color.map((x) => {
              return(<Col className="col-12 mt-4 col-md-4">
-                 <ProductPageBuilder key={x.name}   name={x} >
+                 <ProductPageBuilder key={x.name}    name={x} >
                      </ProductPageBuilder>
                  </Col>
             )})

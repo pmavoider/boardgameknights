@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 let tempArray = []
-export const fetchInventory = createAsyncThunk(
-    'inventory/fetchInventory',
+export const fetchOfficialInventory = createAsyncThunk(
+    'officialGames/fetchOfficialGames',
     async () => {
-      
-        const response = await fetch("https://api.boardgameatlas.com/api/search?list_id=lRL8hqWoID&client_id=4HT2KbcdyO");
+        
+        const response = await fetch("https://api.boardgameatlas.com/api/search?list_id=nWoKO0QfCA&client_id=4HT2KbcdyO");
         const data = await response.json()
         data.games.map((x) => {
               tempArray.push({
@@ -20,22 +20,22 @@ export const fetchInventory = createAsyncThunk(
     }
     );
 
-export const inventorySlice = createSlice({
-    name: "inventory",
-    initialState:{ isLoading: true, errMess: null, inventoryArray: [] },
+export const officialGamesInventorySlice = createSlice({
+    name: "OfficialGames",
+    initialState:{ isLoading: true, errMess: null, officialGamesArray: [] },
     reducers: { },
     extraReducers:{
-        [fetchInventory.pending]: (state) => {
+        [fetchOfficialInventory.pending]: (state) => {
             state.isLoading = true
         },
-        [fetchInventory.fulfilled]: (state, action) => {
+        [fetchOfficialInventory.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.errMess = null;
-            state.inventoryArray = action.payload;
+            state.officialGamesArray = action.payload;
            
 
         },
-        [fetchInventory.rejected]: (state, action) =>{
+        [fetchOfficialInventory.rejected]: (state, action) =>{
             state.isLoading = false;
             state.errMess = action.error ? action.error.message : "fetch failed"
         }
@@ -44,4 +44,4 @@ export const inventorySlice = createSlice({
 )
 
 
-export const inventorySliceReducer = inventorySlice.reducer
+export const OfficialGameInventorySliceReducer = officialGamesInventorySlice.reducer
