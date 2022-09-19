@@ -13,6 +13,7 @@ footer{
 }
 .a,h4{
     text-decoration: none;
+    color:midnightblue;
 }
 
 ul{
@@ -21,3 +22,12 @@ ul{
 .bord{
     box-shadow: 5px 3px grey;
 }
+.brand{
+    text-decoration: none;
+    font-size:2.2rem;
+    color:midnightblue;
+}
+.textColor{
+    color:midnightblue;
+}
+
