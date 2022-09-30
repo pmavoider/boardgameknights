@@ -16,7 +16,18 @@ const Header = () => {
   const [collapsed, setCollapsed] = useState(true);
   const togglenavbar = () => setCollapsed(!collapsed);
   const cart = useSelector((state) => state.shoppingCart.cart);
-  console.log(cart);
+  console.log(cart.length);
+  const cartCount = () => {
+    let total = 0
+    if (cart.length === 0 ){
+      return 0
+    }else {
+        cart.map((x) =>{
+          total = total + x.qty
+        })
+        return total
+    }
+  }
   return (
     <>
       <Navbar className="navbar-expand-md pt-3 bg-info">
@@ -57,7 +68,7 @@ const Header = () => {
                   </Link>
                   <Link
                     class="dropdown-item textColor"
-                    to={{ pathname: "products/strategy" }}
+                    to="products/strategy"
                   >
                     Dice Games
                   </Link>
@@ -86,7 +97,7 @@ const Header = () => {
         <Col class="col ">
           <Link style={{ textDecoration: "none" }} to={`shoppingCart`}>
             <p className="col-11 text-end textColor">
-              <i class="fa  fa-cart-shopping fa-lg"></i> {cart.length}
+              <i class="fa  fa-cart-shopping fa-lg"></i> {cartCount()}
             </p>
           </Link>
         </Col>

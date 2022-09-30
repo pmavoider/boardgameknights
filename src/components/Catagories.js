@@ -71,7 +71,7 @@ const Catagories = () => {
           </Link>
         </Col>
         <Col className="mt-3 mx-auto col-12 col-sm-6 col-md-4">
-          <Link className="brand" to={{ pathname: "products/official" }}>
+          <Link className="brand" to={{ pathname: "products/officialGames" }}>
             <Card className="m-auto" style={{ width: "80%" }}>
               <CardImg src={spiderman} alt="boardGame" />
 

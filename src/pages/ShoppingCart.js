@@ -10,11 +10,15 @@ import {
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+
+
 const ShoppingCart = () => {
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
   const cart = useSelector((state) => state.shoppingCart.cart);
   let total1 = 0;
+
+ 
   if (cart.length != 0) {
     return (
       <>
@@ -33,16 +37,16 @@ const ShoppingCart = () => {
               </Col>
               <Col>
                 <h4>Qty {x.qty}</h4>
-                <button onClick={() => dispatch(increment(x))} className="mr-2">
+                <button onClick={() => dispatch(increment(x))} className="mr-2 rounded bg-info">
                   {" "}
                   +{" "}
                 </button>
-                <button onClick={() => dispatch(decrement(x))} className="mr-2">
+                <button onClick={() => dispatch(decrement(x))} className="m-2 rounded bg-info">
                   {" "}
                   -{" "}
                 </button>
                 <div>
-                  <button onClick={() => dispatch(remove(x))} className="mr-2">
+                  <button onClick={() => dispatch(remove(x))} className="mt-2 rounded bg-info">
                     Remove
                   </button>
                 </div>
@@ -55,7 +59,7 @@ const ShoppingCart = () => {
             </Row>
           );
         })}
-        <Row className="d-flex justify-content-end">
+        <Row className="d-flex justify-content-end my-5">
           <Col className="col-5">
             <h3 className=" text-center">Total</h3>
             <h3 className="text-center ">{total1.toFixed(2)}</h3>

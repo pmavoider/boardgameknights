@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { add } from "./shoppingCart/ShoppingCartSlice";
-import { Button } from "bootstrap";
 import { useDispatch } from "react-redux";
+import { Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Link } from "react-router-dom";
+
 
 const ProductBreakout = (props) => {
   const dispatch = useDispatch();
@@ -32,6 +34,20 @@ const ProductBreakout = (props) => {
       let product = color[i];
       return (
         <>
+           <Breadcrumb className="bg-info  d-none d-md-block">
+            <BreadcrumbItem>
+            <Link  className="textColor" to="/">
+                Home
+            </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>
+            <Link to= {`../products/${props.cat}`}
+                  >Products </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>
+            {color[i].name}
+            </BreadcrumbItem>
+        </Breadcrumb>
           <img
             class="col-8 d-block mx-auto mt-5"
             style={{ maxWidth: "600px" }}

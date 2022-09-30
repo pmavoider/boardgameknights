@@ -12,7 +12,7 @@ export const shoppingCartSlice = createSlice({
       const itemInCart = state.cart.find(
         (item) => item.product.name == action.payload.product.name
       );
-      console.log(itemInCart);
+      alert(action.payload.product.name + " added to Cart");
       if (itemInCart) {
         itemInCart.qty++;
       } else state.cart.push({ ...action.payload, qty: 1 });

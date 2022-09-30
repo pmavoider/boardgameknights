@@ -1,5 +1,5 @@
 import ProductPageBuilder from "../components/ProdcutPageBuilder";
-import { Col, Row } from "reactstrap";
+import { Col, Row, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -26,7 +26,7 @@ const Products = (props) => {
       color = print.partyGames.partyGamesArray;
       heading = "Party";
       break;
-    case "official":
+    case "officialGames":
       color = print.officialGames.officialGamesArray;
       heading = "Officially Licensed";
       break;
@@ -43,6 +43,16 @@ const Products = (props) => {
 
   return (
     <>
+       <Breadcrumb className="bg-info d-none d-md-block">
+            <BreadcrumbItem>
+            <a href="\">
+                Home
+            </a>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>
+            Products
+            </BreadcrumbItem>
+        </Breadcrumb>
       <h1
         className=" text-center brand display-2 p-5"
         style={{ marginTop: "50px" }}

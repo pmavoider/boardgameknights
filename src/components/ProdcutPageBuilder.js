@@ -11,7 +11,7 @@ const ProductPageBuilder = (props) => {
     <>
       <Card style={{height: "80vh"}} className="col-8 col-md-10 p-4 mx-auto bord">
         <Link
-          style={{ textDecoration: "none", height: "500px" }}
+          style={{ textDecoration: "none", height: "400px" }}
           to={`productsPage/${props.name.name}`}
         >
           <img
